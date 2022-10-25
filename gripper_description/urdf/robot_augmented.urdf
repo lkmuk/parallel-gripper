@@ -108,7 +108,7 @@
       <inertia ixx="6.18655e-05" ixy="-4.90692e-06" ixz="1.13998e-08" iyy="5.05121e-05" iyz="-2.19198e-07" izz="7.60343e-05" />
     </inertial>
   </link>
-  <link name="rod_inner_lhs">
+  <link name="lhs_inner_beam">
     <visual>
       <origin xyz="6.93889e-18 0.015 -0.017" rpy="1.32156e-16 -3.87474e-17 3.14159" />
       <geometry>
@@ -166,7 +166,7 @@
       <inertia ixx="4.60867e-06" ixy="3.14257e-08" ixz="1.06508e-07" iyy="3.7668e-06" iyz="-4.42417e-07" izz="1.36028e-06" />
     </inertial>
   </link>
-  <link name="jaw">
+  <link name="lhs_claw">
     <visual>
       <origin xyz="0 -0.006 0" rpy="1.47538e-30 1.79172e-32 -1.1553e-30" />
       <geometry>
@@ -193,8 +193,8 @@
   </link>
   <joint name="lhs_j3" type="continuous">
     <origin xyz="0 -0.03 -0.017" rpy="-1.3685e-16 3.07629e-16 3.14159" />
-    <parent link="rod_inner_lhs" />
-    <child link="jaw" />
+    <parent link="lhs_inner_beam" />
+    <child link="lhs_claw" />
     <axis xyz="0 0 1" />
     <limit effort="1" velocity="20" />
     <joint_properties friction="0.0" />
@@ -203,12 +203,12 @@
   <joint name="lhs_j1" type="revolute">
     <origin xyz="0.03725 0.015 0.017" rpy="-1.9792e-14 -3.38332e-16 -3.14159" />
     <parent link="body" />
-    <child link="rod_inner_lhs" />
+    <child link="lhs_inner_beam" />
     <axis xyz="0 0 1" />
     <limit effort="1" velocity="20" lower="-1.5708" upper="0.15708" />
     <joint_properties friction="0.0" />
   </joint>
-  <link name="rod_outer">
+  <link name="lhs_outer_beam">
     <visual>
       <origin xyz="0.02 0.025 0.0025" rpy="-3.14159 -2.21087e-32 2.27933e-29" />
       <geometry>
@@ -233,13 +233,13 @@
   <joint name="lhs_j2" type="continuous">
     <origin xyz="0.01725 0.04 -1.25421e-15" rpy="-3.14159 -6.16349e-16 5.9816e-13" />
     <parent link="body" />
-    <child link="rod_outer" />
+    <child link="lhs_outer_beam" />
     <axis xyz="0 0 1" />
     <limit effort="1" velocity="20" />
     <joint_properties friction="0.0" />
     <mimic joint="lhs_j1" multiplier="-1" offset="0" />
   </joint>
-  <link name="rod_inner_rhs">
+  <link name="rhs_inner_beam">
     <visual>
       <origin xyz="-0.015 6.93889e-18 -3.46945e-18" rpy="0 -4.93038e-32 1.5708" />
       <geometry>
@@ -288,7 +288,7 @@
       <inertia ixx="3.37282e-06" ixy="3.22003e-08" ixz="3.01896e-07" iyy="4.15872e-06" iyz="-1.13906e-07" izz="1.2342e-06" />
     </inertial>
   </link>
-  <link name="jaw_2">
+  <link name="rhs_claw">
     <visual>
       <origin xyz="0 -0.006 3.08149e-33" rpy="0 -0 -1.48493e-31" />
       <geometry>
@@ -315,8 +315,8 @@
   </link>
   <joint name="rhs_j3" type="continuous">
     <origin xyz="0.03 1.38778e-17 -3.46945e-18" rpy="-3.14159 -8.55478e-24 1.5708" />
-    <parent link="rod_inner_rhs" />
-    <child link="jaw_2" />
+    <parent link="rhs_inner_beam" />
+    <child link="rhs_claw" />
     <axis xyz="0 0 1" />
     <limit effort="1" velocity="20" />
     <joint_properties friction="0.0" />
@@ -325,13 +325,13 @@
   <joint name="rhs_j1" type="continuous">
     <origin xyz="0.03725 -0.015 -1.6679e-19" rpy="-3.14417e-16 2.28667e-16 -1.5708" />
     <parent link="body" />
-    <child link="rod_inner_rhs" />
+    <child link="rhs_inner_beam" />
     <axis xyz="0 0 1" />
     <limit effort="1" velocity="20" lower="-0.174533" upper="1.5708" />
     <joint_properties friction="0.0" />
     <mimic joint="lhs_j1" multiplier="-1" offset="0" />
   </joint>
-  <link name="rod_outer_2">
+  <link name="rhs_outer_beam">
     <visual>
       <origin xyz="0.02 0.055 0.0025" rpy="3.14159 3.28171e-31 -3.02638e-31" />
       <geometry>
@@ -356,7 +356,7 @@
   <joint name="rhs_j2" type="continuous">
     <origin xyz="0.01725 -0.04 0" rpy="-3.14159 -4.12648e-15 5.65242e-14" />
     <parent link="body" />
-    <child link="rod_outer_2" />
+    <child link="rhs_outer_beam" />
     <axis xyz="0 0 1" />
     <limit effort="1" velocity="20" />
     <joint_properties friction="0.0" />

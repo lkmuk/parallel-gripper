@@ -92,11 +92,15 @@ class gripper_urdf_from_Onshape:
 
         self.robot = urdf_root
         self.mimic_joint_handle_list = grab_expected_joints_handle(self.robot, self.mimic_joint_name_list)
-
+        self.joint_handle_list = {
+            "lhs": grab_expected_joints_handle(self.robot, [f"lhs_j{i:d}" for i in (1,2,3)]),
+            "rhs": grab_expected_joints_handle(self.robot, [f"rhs_j{i:d}" for i in (1,2,3)])
+        } # watch out for the index offset
 
         # finally
         self._augment()
 
+        self._rename_links()
         print_urdf(self.robot)
 
         # the gazebo stuff --- gearing and the extra link will be provided as supplementary files (based on the configuration?????) instead...
@@ -127,7 +131,24 @@ class gripper_urdf_from_Onshape:
 
         self.ran_once = True
         
-        
+    def _rename_links(self):
+            """reinstate the naming convention
+
+            so that the gazebo stuff can work automatically
+            """
+
+            # enforce also the link "base"
+            name_body = self.joint_handle_list["lhs"][0].find("parent").attrib["link"]
+            if name_body != "body":
+                rename_link(self.robot, link_name_old=name_body, link_name_new="body")
+
+            for prefix in ("lhs", "rhs"):
+                # xhs_j1's child = xhs_inner_beam, 
+                # xhs_j2's child = xhs_outer_beam.
+                # xhs_j3's child = xhs_claw
+                for (new_name, helper_joint_handle) in zip(("inner_beam","outer_beam","claw"), self.joint_handle_list[prefix]):
+                    old_name = helper_joint_handle.find("child").get("link")
+                    rename_link(self.robot, old_name, prefix+"_"+new_name)
 
     def write(self, outfile_path):
         format_then_write(self.robot, outfile_path)

@@ -1,0 +1,28 @@
+# By far the most common drive concept is to
+# couple lhs_j1 to a servo motor.
+
+# Will joint_state_publisher published the passive joint state?
+control:
+  - {joint: "lhs_j1", mode: "pos"}
+
+# it is possible to have many possible drive concepts, 
+# e.g. torque control on all eight joints in the base_link
+# TODO # If you (inadvertently) apply mimicking on an active joint, you will get an error.
+mimic: 
+  # left-hand-side 
+  - {src : "lhs_j1", to: "lhs_j2", multiplier: -1, gearing: false}
+  - {src : "lhs_j1", to: "lhs_j3", multiplier: -1, gearing: false}
+  # - {src : "lhs_j1", to: "lhs_j4", multiplier: -1, gearing: false}
+  
+  # right-hand-side
+  - {src : "lhs_j1", to: "rhs_j1", multiplier: -1, gearing: true} #<-- this will lead to a <mimic> for urdf export; an extra <joint> of type="gearbox" for the SDF export...
+  - {src : "lhs_j1", to: "rhs_j2", multiplier: +1, gearing: false}
+  - {src : "lhs_j1", to: "rhs_j3", multiplier: -1, gearing: false}
+  # - {src : "lhs_j1", to: "rhs_j4", multiplier: +1, gearing: false}
+
+
+# you shall specify the joint POSITION limit inside Onshape, and
+# joint velocity and effort limits in the config for Onshape-to-Robot.
+# In general, things that are already supported in Onshape-to-Robot shall be
+# specified there.
+# TODO ,e.g. spongieness of the pad

@@ -1,0 +1,17 @@
+{
+    "documentId": "49626b387cf4e770f5c07d84",
+    "assemblyName": "parallel_link_gripper",
+    "robotName": "parallel_link_gripper",
+    "outputFormat": "urdf",
+    "addDummyBaseLink": true,
+    "packageName": "gripper_description/mesh",
+    "ignore":[
+        "target_obj"
+    ],
+    "postImportCommands":[
+        "python gripper_model.py",
+        "mv *.part ../gripper_description/mesh/",
+        "mv *.stl ../gripper_description/mesh",
+        "mv robot_augmented.urdf ../gripper_description/urdf/"
+    ]
+}

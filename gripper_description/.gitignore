@@ -1,0 +1,5 @@
+mesh/*.part
+
+# only add it when the design is pretty stable!
+mesh/*.stl
+

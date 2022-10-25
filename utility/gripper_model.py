@@ -4,7 +4,7 @@ from collections import namedtuple, OrderedDict
 
 from urdf_kit.edit_joints import grab_expected_joints_handle
 from urdf_kit.misc import format_then_write, print_urdf
-# from urdf_kit.edit_link import ???
+from urdf_kit.edit_links import rename_link, purge_nonprimitive_collision_geom
 
 ctr_spec_entry = namedtuple("ctr_spec_entry", ["joint","mode"])
 passive_entry = namedtuple("passive_entry", ["src","to","multiplier", "gearing"])
@@ -131,9 +131,15 @@ class gripper_urdf_from_Onshape:
 
     def write(self, outfile_path):
         format_then_write(self.robot, outfile_path)
+        
+    def purge_collision_mesh(self, whitelist: list[str] = []):
+    	purge_nonprimitive_collision_geom(self.robot, whitelist)
+    		
 
 
 if __name__ == "__main__":
+
+    from sys import argv
     from pathlib  import Path
     this_dir = Path(__file__).resolve().parent
 
@@ -152,5 +158,7 @@ if __name__ == "__main__":
         ET.parse(fpath_urdf_original).getroot(), 
         my_spec
     )
+    if len(argv) > 0:
+    	editor.purge_collision_mesh(whitelist=argv[1:])
     editor.write(fpath_urdf_new)
 

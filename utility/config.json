@@ -8,10 +8,12 @@
     "ignore":[
         "target_obj"
     ],
+
+    "useScads": true,
+
     "postImportCommands":[
-        "python gripper_model.py",
-        "mv *.part ../gripper_description/mesh/",
-        "mv *.stl ../gripper_description/mesh",
+        "python gripper_model.py jaw_plate",
+        "cp *.stl ../gripper_description/mesh",
         "mv robot_augmented.urdf ../gripper_description/urdf/"
     ]
 }

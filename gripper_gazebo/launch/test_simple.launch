@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="namespace" default="gripper"/>
+    <group ns="$(arg namespace)">
+        <include file="$(find gripper_gazebo)/launch/spawn.launch"/>
+    </group>
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find gripper_gazebo)/worlds/testbench.world"/>
+        <arg name="debug" value="false" />
+        <arg name="paused" value="true" />
+        <arg name="gui" value="true" />
+        <arg name="verbose" value="true"/>
+      </include>
+</launch>

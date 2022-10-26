@@ -1,10 +1,18 @@
 <?xml version="1.0"?>
 
 <launch>
+  <arg name="focusOnJ4" default="false"/>
   <param name="robot_description" command="$(find xacro)/xacro $(find gripper_description)/urdf/robot_augmented.urdf namespace:=uav" />
   <node name="joint_state_setter" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
   	<param name="use_mimic_tags" value="true"/>
   </node>
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find gripper_description)/gripper.rviz"/>
+
+  <group if="$(arg focusOnJ4)">
+      <node name="rviz" pkg="rviz" type="rviz" args="-d $(find gripper_description)/gripper-j4.rviz"/>
+  </group>
+  <group unless="$(arg focusOnJ4)"> <!--i.e. if the flag is not set (which is the default) -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find gripper_description)/gripper.rviz"/>
+  </group>
+  
 </launch>

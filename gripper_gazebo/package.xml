@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>gripper_gazebo</name>
+  <version>0.0.1</version>
+  <description>Physics-based simulation of the lightweight fourbar parallel-link two-jaw gripper</description>
+
+
+  <maintainer email="lkmuk2017@gmail.com">Laikan Muk</maintainer>
+
+
+  <license>MIT</license>
+
+
+  <url type="website">https://github.com/lkmuk/parallel-gripper</url>
+
+
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>gripper_description</exec_depend>
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<sdf version='1.7'>
+  <world name='testbench'>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <ode>
+        <constraints>
+            <cfm>0.1</cfm>
+            <erp>0.4</erp>
+        </constraints>
+      </ode>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+
+    <include>
+      <name>gnd</name>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <name>sun</name>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+      <uri>model://table</uri>
+      <!--from http://models.gazebosim.org-->
+      <!-- just ignore the "error":
+        Non-unique names detected in <link name='link'>
+        https://github.com/open-rmf/rmf_demos/issues/73
+      -->
+    </include>
+    <include>
+      <uri>model://coke_can</uri>
+      <!--from http://models.gazebosim.org-->
+      <pose>0.086 0 1.01167 0 0 0</pose>
+    </include>
+    
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-0.575241 0.35501 1.59297 0 0.666796 -0.63601</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+  </world>
+</sdf>

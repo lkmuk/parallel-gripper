@@ -60,5 +60,4 @@
         </joint>
     </gazebo>
     
-    <!--TODO padding material - elastic collision -->
 </robot>

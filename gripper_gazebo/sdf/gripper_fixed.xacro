@@ -9,6 +9,10 @@
     <xacro:include filename="$(find gripper_description)/urdf/robot_augmented.urdf"/>
     <xacro:include filename="$(find gripper_gazebo)/sdf/gripper_joints_for_sim.gazebo"/>
     
+    <xacro:include filename="$(find gripper_gazebo)/sdf/gripper_contact.gazebo"/>
+    <xacro:friction_lining prefix="lhs"/>
+    <xacro:friction_lining prefix="rhs"/>
+    
     <!-- <xacro:if value="${fix_baselink == 'true'}">
     	<joint name="gripper2parent" type="fixed">
     	  <parent link="${arg baselink_parent_name}"/>

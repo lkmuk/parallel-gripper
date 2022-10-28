@@ -26,7 +26,7 @@
                 (because it depends on how you define the mate connections in Onshape).
                 In any case, the manual inspection takes almost no time. 
             -->
-            <pose>0 -0.03 0</pose> <!--rod length-->
+            <pose>0 -0.035 0</pose> <!--rod length-->
             <axis>
                 <xyz>0 0 1</xyz>
             </axis>
@@ -37,7 +37,7 @@
             <parent>rhs_claw</parent>
             <child>rhs_outer_beam</child>         
             <!--see the remark for lhs_j4 -->
-            <pose>0 0.03 0</pose>
+            <pose>0 0.035 0</pose>
             <axis>
                 <xyz>0 0 -1</xyz>
             </axis>

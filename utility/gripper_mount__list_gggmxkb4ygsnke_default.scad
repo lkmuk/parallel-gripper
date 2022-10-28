@@ -3,7 +3,7 @@
 
 gripper_height = 40;
 mount_width = 33*2;
-width_stage2 = 28*2;
+width_stage2 = 24*2;
 body_length_stage1 = 41;
 body_length_stage2 = 8;
 

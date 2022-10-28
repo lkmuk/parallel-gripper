@@ -7,7 +7,7 @@
   </joint>
   <link name="body">
     <visual>
-      <origin xyz="0.002 2.84109e-20 -0.017" rpy="-9.02876e-31 -0 -6.57608e-32" />
+      <origin xyz="0.002 2.84109e-20 -0.017" rpy="4.43272e-17 9.56494e-30 -6.02851e-29" />
       <geometry>
         <mesh filename="package://gripper_description/mesh/gripper_mount__list_gggmxkb4ygsnke_default.stl" />
       </geometry>
@@ -16,19 +16,19 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0.0205 2.84109e-20 -6.93889e-18" rpy="-9.02876e-31 -0 -6.57608e-32" />
+      <origin xyz="0.0205 2.84109e-20 -6.93889e-18" rpy="4.43272e-17 9.56494e-30 -6.02851e-29" />
       <geometry>
         <box size="0.041 0.066 0.04" />
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.045 2.84109e-20 -6.93889e-18" rpy="-9.02876e-31 -0 -6.57608e-32" />
+      <origin xyz="0.045 2.84109e-20 -6.93889e-18" rpy="4.43272e-17 9.56494e-30 -6.02851e-29" />
       <geometry>
-        <box size="0.008 0.056 0.04" />
+        <box size="0.008 0.048 0.04" />
       </geometry>
     </collision>
     <visual>
-      <origin xyz="0.002 1.04368e-17 -0.017" rpy="2.28667e-16 3.14417e-16 -1.65045e-30" />
+      <origin xyz="0.002 1.04368e-17 -0.017" rpy="2.72994e-16 3.14417e-16 -6.18698e-29" />
       <geometry>
         <mesh filename="package://gripper_description/mesh/gripper_x430_shell_rhs__list_gggmxkb4ygsnke_default.stl" />
       </geometry>
@@ -37,7 +37,7 @@
       </material>
     </visual>
     <visual>
-      <origin xyz="0.002 1.73756e-17 -0.017" rpy="2.28667e-16 3.14417e-16 -1.65045e-30" />
+      <origin xyz="0.002 1.73756e-17 -0.017" rpy="2.72994e-16 3.14417e-16 -6.18698e-29" />
       <geometry>
         <mesh filename="package://gripper_description/mesh/gripper_bracket_rhs__list_gggmxkb4ygsnke_default.stl" />
       </geometry>
@@ -46,19 +46,19 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0.0215 -0.034 0" rpy="2.28667e-16 3.14417e-16 -1.65045e-30" />
+      <origin xyz="0.0215 -0.034 0" rpy="2.72994e-16 3.14417e-16 -6.18698e-29" />
       <geometry>
         <box size="0.03 0.003 0.02" />
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.0173 -0.04 0" rpy="2.28667e-16 3.14417e-16 -1.65045e-30" />
+      <origin xyz="0.0173 -0.04 0" rpy="2.72994e-16 3.14417e-16 -6.18698e-29" />
       <geometry>
         <cylinder length="0.02" radius="0.005" />
       </geometry>
     </collision>
     <visual>
-      <origin xyz="0.03725 0.015 0.019" rpy="-4.91725e-16 1.9792e-14 -1.5708" />
+      <origin xyz="0.03725 0.015 0.019" rpy="-4.91725e-16 1.98363e-14 -1.5708" />
       <geometry>
         <mesh filename="package://gripper_description/mesh/dynamixel_casing__list_ndk53xfpevccij_default.stl" />
       </geometry>
@@ -67,7 +67,7 @@
       </material>
     </visual>
     <visual>
-      <origin xyz="0.002 0.0615 -0.017" rpy="2.28667e-16 3.71583e-16 7.45931e-17" />
+      <origin xyz="0.002 0.0615 -0.017" rpy="2.72994e-16 3.71583e-16 7.45931e-17" />
       <geometry>
         <mesh filename="package://gripper_description/mesh/gripper_bracket_pad__list_gggmxkb4ygsnke_default.stl" />
       </geometry>
@@ -76,7 +76,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0.0215 0.0307 3.46945e-17" rpy="2.28667e-16 3.71583e-16 7.45931e-17" />
+      <origin xyz="0.0215 0.0307 3.81639e-17" rpy="2.72994e-16 3.71583e-16 7.45931e-17" />
       <geometry>
         <box size="0.03 0.003 0.02" />
       </geometry>
@@ -91,13 +91,13 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0.0215 0.034 -1.25594e-15" rpy="-3.14159 3.14417e-16 5.37331e-16" />
+      <origin xyz="0.0215 0.034 -1.25247e-15" rpy="-3.14159 3.14417e-16 5.37331e-16" />
       <geometry>
         <box size="0.03 0.003 0.02" />
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.0173 0.04 -1.25247e-15" rpy="-3.14159 3.14417e-16 5.37331e-16" />
+      <origin xyz="0.0173 0.04 -1.249e-15" rpy="-3.14159 3.14417e-16 5.37331e-16" />
       <geometry>
         <cylinder length="0.02" radius="0.005" />
       </geometry>
@@ -119,19 +119,19 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="4.02496e-18 1.73472e-18 0.0045" rpy="1.32156e-16 -3.87474e-17 3.14159" />
+      <origin xyz="2.35963e-18 1.73472e-18 0.0045" rpy="1.32156e-16 -3.87474e-17 3.14159" />
       <geometry>
         <cylinder length="0.005" radius="0.013" />
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-3.46542e-19 -0.0175 0.0045" rpy="1.32156e-16 -3.87474e-17 3.14159" />
+      <origin xyz="-4.67641e-18 -0.0195 0.0045" rpy="1.32156e-16 -3.87474e-17 3.14159" />
       <geometry>
-        <box size="0.01 0.035 0.005" />
+        <box size="0.01 0.039 0.005" />
       </geometry>
     </collision>
     <visual>
-      <origin xyz="1.38778e-17 0.015 -0.024" rpy="-1.46561e-16 3.87474e-17 -3.60822e-16" />
+      <origin xyz="1.38778e-17 0.015 -0.024" rpy="-1.46561e-16 3.87474e-17 -4.71845e-16" />
       <geometry>
         <mesh filename="package://gripper_description/mesh/rod_inner_bottom.stl" />
       </geometry>
@@ -140,19 +140,19 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="6.67789e-19 -0.02 -0.039" rpy="-1.46561e-16 3.87474e-17 -3.60822e-16" />
+      <origin xyz="-3.21799e-18 -0.02 -0.039" rpy="-1.46561e-16 3.87474e-17 -4.71845e-16" />
       <geometry>
-        <box size="0.012 0.028 0.005" />
+        <box size="0.012 0.036 0.005" />
       </geometry>
     </collision>
     <collision>
-      <origin xyz="7.88424e-18 -6.93889e-18 -0.039" rpy="1.46561e-16 3.87474e-17 -3.60822e-16" />
+      <origin xyz="6.2189e-18 -5.20417e-18 -0.039" rpy="1.46561e-16 3.87474e-17 -4.71845e-16" />
       <geometry>
         <cylinder length="0.005" radius="0.011" />
       </geometry>
     </collision>
     <visual>
-      <origin xyz="0 0 0.002" rpy="0 -0 -6.69627e-30" />
+      <origin xyz="0 0 0.002" rpy="0 -0 -2.31702e-29" />
       <geometry>
         <mesh filename="package://gripper_description/mesh/dynamixel_horn__list_ndk53xfpevccij_default.stl" />
       </geometry>
@@ -161,14 +161,14 @@
       </material>
     </visual>
     <inertial>
-      <origin xyz="-0.000749317 -0.00574927 -0.0125514" rpy="0 0 0" />
-      <mass value="0.008336" />
-      <inertia ixx="4.60867e-06" ixy="3.14257e-08" ixz="1.06508e-07" iyy="3.7668e-06" iyz="-4.42417e-07" izz="1.36028e-06" />
+      <origin xyz="-0.000694637 -0.00752629 -0.013178" rpy="0 0 0" />
+      <mass value="0.00897747" />
+      <inertia ixx="5.34685e-06" ixy="4.25659e-08" ixz="1.10241e-07" iyy="4.1093e-06" iyz="-5.49535e-07" izz="1.77758e-06" />
     </inertial>
   </link>
   <link name="lhs_claw">
     <visual>
-      <origin xyz="0 -0.006 0" rpy="1.47538e-30 1.79172e-32 -1.1553e-30" />
+      <origin xyz="0 -0.006 -1.97215e-31" rpy="0 -0 2.01638e-30" />
       <geometry>
         <mesh filename="package://gripper_description/mesh/jaw_plate.stl" />
       </geometry>
@@ -177,7 +177,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 -0.006 0" rpy="1.47538e-30 1.79172e-32 -1.1553e-30" />
+      <origin xyz="0 -0.006 -1.97215e-31" rpy="0 -0 2.01638e-30" />
       <geometry>
         <mesh filename="package://gripper_description/mesh/jaw_plate.stl" />
       </geometry>
@@ -186,13 +186,13 @@
       </material>
     </collision>
     <inertial>
-      <origin xyz="0.0084421 0.011184 -7.65795e-10" rpy="0 0 0" />
-      <mass value="0.0692262" />
-      <inertia ixx="1.03939e-05" ixy="5.20676e-06" ixz="-7.28803e-12" iyy="3.49184e-05" iyz="1.63365e-11" izz="3.29754e-05" />
+      <origin xyz="0.00954335 0.0109092 -3.55182e-09" rpy="0 0 0" />
+      <mass value="0.0706194" />
+      <inertia ixx="1.06828e-05" ixy="6.2682e-06" ixz="7.52244e-13" iyy="3.9212e-05" iyz="1.29448e-11" izz="3.75191e-05" />
     </inertial>
   </link>
   <joint name="lhs_j3" type="continuous">
-    <origin xyz="0 -0.03 -0.017" rpy="-1.3685e-16 3.07629e-16 3.14159" />
+    <origin xyz="-1.38778e-17 -0.035 -0.017" rpy="1.32156e-16 -3.87474e-17 3.14159" />
     <parent link="lhs_inner_beam" />
     <child link="lhs_claw" />
     <axis xyz="0 0 1" />
@@ -201,7 +201,7 @@
     <mimic joint="lhs_j1" multiplier="-1" offset="0" />
   </joint>
   <joint name="lhs_j1" type="revolute">
-    <origin xyz="0.03725 0.015 0.017" rpy="-1.9792e-14 -3.38332e-16 -3.14159" />
+    <origin xyz="0.03725 0.015 0.017" rpy="-1.9792e-14 -6.27246e-15 -3.14159" />
     <parent link="body" />
     <child link="lhs_inner_beam" />
     <axis xyz="0 0 1" />
@@ -210,7 +210,7 @@
   </joint>
   <link name="lhs_outer_beam">
     <visual>
-      <origin xyz="0.02 0.025 0.0025" rpy="-3.14159 -2.21087e-32 2.27933e-29" />
+      <origin xyz="0.02 0.025 0.0025" rpy="-3.14159 -1.88544e-31 3.5742e-29" />
       <geometry>
         <mesh filename="package://gripper_description/mesh/rod_outer.stl" />
       </geometry>
@@ -219,19 +219,19 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 -0.015 0" rpy="-3.14159 -2.21087e-32 2.27933e-29" />
+      <origin xyz="3.46945e-18 -0.0175 0" rpy="-3.14159 -1.88544e-31 3.5742e-29" />
       <geometry>
-        <box size="0.01 0.038 0.005" />
+        <box size="0.01 0.043 0.005" />
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="-6.93889e-18 -0.015 0" rpy="0 0 0" />
-      <mass value="0.00147516" />
-      <inertia ixx="1.60126e-07" ixy="3.65727e-36" ixz="1.14731e-38" iyy="1.08435e-08" iyz="4.82529e-37" izz="1.64823e-07" />
+      <origin xyz="3.46945e-18 -0.0175 0" rpy="0 0 0" />
+      <mass value="0.00168556" />
+      <inertia ixx="2.35764e-07" ixy="8.3159e-36" ixz="9.11279e-38" iyy="1.24039e-08" iyz="-3.0331e-37" izz="2.41145e-07" />
     </inertial>
   </link>
   <joint name="lhs_j2" type="continuous">
-    <origin xyz="0.01725 0.04 -1.25421e-15" rpy="-3.14159 -6.16349e-16 5.9816e-13" />
+    <origin xyz="0.01725 0.04 -1.249e-15" rpy="-3.14159 4.40184e-15 7.06094e-13" />
     <parent link="body" />
     <child link="lhs_outer_beam" />
     <axis xyz="0 0 1" />
@@ -241,7 +241,7 @@
   </joint>
   <link name="rhs_inner_beam">
     <visual>
-      <origin xyz="-0.015 6.93889e-18 -3.46945e-18" rpy="0 -4.93038e-32 1.5708" />
+      <origin xyz="-0.015 6.93889e-18 -3.46945e-18" rpy="0 -0 1.5708" />
       <geometry>
         <mesh filename="package://gripper_description/mesh/rod_inner_rhs_top.stl" />
       </geometry>
@@ -250,19 +250,19 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="1.73472e-18 6.93889e-18 0.0215" rpy="0 -4.93038e-32 1.5708" />
+      <origin xyz="0 6.93889e-18 0.0215" rpy="0 -0 1.5708" />
       <geometry>
         <cylinder length="0.005" radius="0.013" />
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.0175 6.93889e-18 0.0215" rpy="0 -4.93038e-32 1.5708" />
+      <origin xyz="0.0195 6.93889e-18 0.0215" rpy="0 -0 1.5708" />
       <geometry>
-        <box size="0.01 0.035 0.005" />
+        <box size="0.01 0.039 0.005" />
       </geometry>
     </collision>
     <visual>
-      <origin xyz="-0.015 6.93889e-18 -0.007" rpy="1.957e-17 2.77556e-17 1.5708" />
+      <origin xyz="-0.015 1.38778e-17 -0.007" rpy="3.914e-17 -8.32667e-17 1.5708" />
       <geometry>
         <mesh filename="package://gripper_description/mesh/rod_inner_bottom.stl" />
       </geometry>
@@ -271,26 +271,26 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0.02 6.93889e-19 -0.022" rpy="1.957e-17 2.77556e-17 1.5708" />
+      <origin xyz="0.02 2.08167e-18 -0.022" rpy="3.914e-17 -8.32667e-17 1.5708" />
       <geometry>
-        <box size="0.012 0.028 0.005" />
+        <box size="0.012 0.036 0.005" />
       </geometry>
     </collision>
     <collision>
-      <origin xyz="1.73472e-18 4.02456e-18 -0.022" rpy="-1.957e-17 2.77556e-17 1.5708" />
+      <origin xyz="0 7.63278e-18 -0.022" rpy="-3.914e-17 -8.32667e-17 1.5708" />
       <geometry>
         <cylinder length="0.005" radius="0.011" />
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.00698021 0.00083018 0.00134512" rpy="0 0 0" />
-      <mass value="0.00680759" />
-      <inertia ixx="3.37282e-06" ixy="3.22003e-08" ixz="3.01896e-07" iyy="4.15872e-06" iyz="-1.13906e-07" izz="1.2342e-06" />
+      <origin xyz="0.00901442 0.000756382 0.000852503" rpy="0 0 0" />
+      <mass value="0.00744734" />
+      <inertia ixx="3.68765e-06" ixy="4.3779e-08" ixz="3.57846e-07" iyy="4.8283e-06" iyz="-1.16308e-07" izz="1.61067e-06" />
     </inertial>
   </link>
   <link name="rhs_claw">
     <visual>
-      <origin xyz="0 -0.006 3.08149e-33" rpy="0 -0 -1.48493e-31" />
+      <origin xyz="-6.93889e-18 -0.006 -4.93038e-32" rpy="0 -0 1.42883e-30" />
       <geometry>
         <mesh filename="package://gripper_description/mesh/jaw_plate.stl" />
       </geometry>
@@ -299,7 +299,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 -0.006 3.08149e-33" rpy="0 -0 -1.48493e-31" />
+      <origin xyz="-6.93889e-18 -0.006 -4.93038e-32" rpy="0 -0 1.42883e-30" />
       <geometry>
         <mesh filename="package://gripper_description/mesh/jaw_plate.stl" />
       </geometry>
@@ -308,13 +308,13 @@
       </material>
     </collision>
     <inertial>
-      <origin xyz="0.0084421 0.011184 -7.65795e-10" rpy="0 0 0" />
-      <mass value="0.0692262" />
-      <inertia ixx="1.03939e-05" ixy="5.20676e-06" ixz="-7.28803e-12" iyy="3.49184e-05" iyz="1.63365e-11" izz="3.29754e-05" />
+      <origin xyz="0.00954335 0.0109092 -3.55182e-09" rpy="0 0 0" />
+      <mass value="0.0706194" />
+      <inertia ixx="1.06828e-05" ixy="6.2682e-06" ixz="7.52244e-13" iyy="3.9212e-05" iyz="1.29448e-11" izz="3.75191e-05" />
     </inertial>
   </link>
   <joint name="rhs_j3" type="continuous">
-    <origin xyz="0.03 1.38778e-17 -3.46945e-18" rpy="-3.14159 -8.55478e-24 1.5708" />
+    <origin xyz="0.035 6.93889e-18 -3.46945e-18" rpy="-3.14159 -0 1.5708" />
     <parent link="rhs_inner_beam" />
     <child link="rhs_claw" />
     <axis xyz="0 0 1" />
@@ -323,7 +323,7 @@
     <mimic joint="lhs_j1" multiplier="-1" offset="0" />
   </joint>
   <joint name="rhs_j1" type="continuous">
-    <origin xyz="0.03725 -0.015 -1.6679e-19" rpy="-3.14417e-16 2.28667e-16 -1.5708" />
+    <origin xyz="0.03725 -0.015 8.67246e-31" rpy="-6.24854e-15 1.67434e-16 -1.5708" />
     <parent link="body" />
     <child link="rhs_inner_beam" />
     <axis xyz="0 0 1" />
@@ -333,7 +333,7 @@
   </joint>
   <link name="rhs_outer_beam">
     <visual>
-      <origin xyz="0.02 0.055 0.0025" rpy="3.14159 3.28171e-31 -3.02638e-31" />
+      <origin xyz="0.02 0.06 0.0025" rpy="3.14159 -0 1.42883e-30" />
       <geometry>
         <mesh filename="package://gripper_description/mesh/rod_outer.stl" />
       </geometry>
@@ -342,19 +342,19 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="1.38778e-17 0.015 4.33681e-19" rpy="3.14159 3.28171e-31 -3.02638e-31" />
+      <origin xyz="1.04083e-17 0.0175 4.33681e-19" rpy="3.14159 -0 1.42883e-30" />
       <geometry>
-        <box size="0.01 0.038 0.005" />
+        <box size="0.01 0.043 0.005" />
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="6.93889e-18 0.015 4.33681e-19" rpy="0 0 0" />
-      <mass value="0.00147516" />
-      <inertia ixx="1.60126e-07" ixy="-6.53221e-38" ixz="-5.53436e-38" iyy="1.08435e-08" iyz="-7.06994e-39" izz="1.64823e-07" />
+      <origin xyz="1.04083e-17 0.0175 4.33681e-19" rpy="0 0 0" />
+      <mass value="0.00168556" />
+      <inertia ixx="2.35764e-07" ixy="3.5459e-37" ixz="0" iyy="1.24039e-08" iyz="0" izz="2.41145e-07" />
     </inertial>
   </link>
   <joint name="rhs_j2" type="continuous">
-    <origin xyz="0.01725 -0.04 0" rpy="-3.14159 -4.12648e-15 5.65242e-14" />
+    <origin xyz="0.01725 -0.04 -3.46945e-18" rpy="-3.14159 6.24854e-15 -5.22162e-14" />
     <parent link="body" />
     <child link="rhs_outer_beam" />
     <axis xyz="0 0 1" />

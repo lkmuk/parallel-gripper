@@ -6,7 +6,7 @@ bar_width = 10;
 z_center = -15;
 
 translate([0,-35,z_center]){
-  cube([12, 28, rod_thickness], center=true);
+  cube([12, 36, rod_thickness], center=true);
 }
 
 

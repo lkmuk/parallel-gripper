@@ -10,6 +10,6 @@ bar_width = 10;
 mirror([0,1,0])translate([0, 15, 19]){
     cylinder(r=13, h=rod_thickness);
     translate([-bar_width/2, 0, 0]){
-        cube([bar_width, 35, rod_thickness]);
+        cube([bar_width, 39, rod_thickness]);
     }
 }

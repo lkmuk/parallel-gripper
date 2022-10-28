@@ -8,5 +8,5 @@
 rod_thickness = 5;
 bar_width = 10;
 translate([-20-bar_width/2, 21, 0   ]){
-        cube([bar_width, 38, rod_thickness]);
+        cube([bar_width, 43, rod_thickness]);
 }

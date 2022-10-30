@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!--the two "extra" joints lhs_j4 and rhs_j4 that closese the loop-->
+    <!-- these are actually SDF not URDF-->
+    <xacro:macro name="mk_parallel_gripper_gz_4bar" params="ns">
+        <gazebo>
+            <joint name="${ns}/lhs_j4" type="revolute">
+                <!--continuous joint not okay?-->
+                <parent>${ns}/lhs_claw</parent>
+                <child>${ns}/lhs_outer_beam</child>
+                <!--
+                "pose" refers to where the j4 is on the child link 
+                wrt to the CHILD link frame NOT the CAD frame!!
+                This is quite different than URDF!
+
+                For determining it correctly, use 
+                roslaunch gripper_description inspect_gripper_rviz.launch focusOnJ4:=true
+                observe the grid size (set to be 1 cm)
+                (as always R-G-B stands for X-Y-Z)
+                See `aid.png` for a screenshot!
+
+                It's quite hard to automate this 
+                (because it depends on how you define the mate connections in Onshape).
+                In any case, the manual inspection takes almost no time. 
+            -->
+                <pose>0 -0.03 0</pose> <!--rod length-->
+                <axis>
+                    <xyz>0 0 1</xyz>
+                </axis>
+            </joint>
+        </gazebo>
+        <gazebo>
+            <joint name="${ns}/rhs_j4" type="revolute">
+                <parent>${ns}/rhs_claw</parent>
+                <child>${ns}/rhs_outer_beam</child>
+                <!--see the remark for lhs_j4 -->
+                <pose>0 0.03 0</pose>
+                <axis>
+                    <xyz>0 0 -1</xyz>
+                </axis>
+            </joint>
+        </gazebo>
+    </xacro:macro>
+    <xacro:macro name="mk_parallel_gripper_gz_gearbox_coupling" params="ns">
+        <!--the gearing connection between lhs_j1 and rhs_j1-->
+        <gazebo>
+            <joint name="j1_coupling" type="gearbox">
+                <parent>${ns}/lhs_inner_beam</parent>
+                <child>${ns}/rhs_inner_beam</child>
+                <gearbox_ratio>1</gearbox_ratio>
+                <gearbox_reference_body>${ns}/base_link</gearbox_reference_body>
+                <axis>
+                    <xyz>0 0 1</xyz>
+                </axis>
+                <axis2>
+                    <xyz>0 0 1</xyz>
+                </axis2>
+            </joint>
+        </gazebo>
+    </xacro:macro>
+
+    <xacro:macro name="gripper_friction_lining" params="ns prefix">
+        <!--padding material - elastic collision -->
+        <!-- 
+			doesn't QUITE add the extra pad as I hoped, 
+			see https://classic.gazebosim.org/tutorials?tut=ros_urdf&cat=connect_ros
+		-->
+        <gazebo reference="${ns}/${prefix}_claw">
+            <!-- <collision name="${prefix}_claw_friction_lining">
+				<pose relative_to="${prefix}_claw">0.03 0 0 0 0 0</pose>
+				<geometry>
+					<box>0.055 0.01 0.036</box>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu> 0.7</mu>
+						</ode>
+					</friction>
+					<bounce>
+						<restitution_coefficient>0.2</restitution_coefficient>
+					</bounce>
+				</surface>
+				<contact>
+					<ode>
+						<kp>1e7</kp>
+						<kd>10</kd>
+					</ode>
+				</contact>
+			</collision> -->
+
+            <!-- temporary soln: modify the existing collision geometry-->
+            <material>Gazebo/Green</material> <!-- TODO put it in a more sensible place-->
+            <mu1>0.7</mu1>
+            <!-- <mu>0.7</mu> -->
+            <maxContacts>5</maxContacts>
+            <!-- <max_contacts>5</max_contacts> -->
+            <kp>1e7</kp>
+            <kd>10</kd>
+            <minDepth>0.002</minDepth>
+            <!-- <min_depth>0.002</min_depth> -->
+
+        </gazebo>
+
+    </xacro:macro>
+</robot>

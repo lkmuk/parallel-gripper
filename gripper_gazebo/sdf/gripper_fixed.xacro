@@ -1,41 +1,29 @@
 <?xml version="1.0"?>
-<robot name="gripper_stationary" xmlns:xacro="https://ros.org/wiki/xacro">
-    <!-- <xacro:arg name="fix_baselink" default="true"/>
-    <xacro:arg name="baselink_parent_name" default="world"/>
-    <xacro:arg name="parent_sees_baselink_xyz" default="0 0 0.1"/>
-    <xacro:arg name="parent_sees_baselink_rpy" default="0 -1.571 0"/>    
-     -->
+<robot name="gripper_stationary" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:arg name="namespace" default="my_gripper" />
 
-    <xacro:include filename="$(find gripper_description)/urdf/robot_augmented.urdf"/>
-    <xacro:include filename="$(find gripper_gazebo)/sdf/gripper_joints_for_sim.gazebo"/>
-    
-    <xacro:include filename="$(find gripper_gazebo)/sdf/gripper_contact.gazebo"/>
-    <xacro:friction_lining prefix="lhs"/>
-    <xacro:friction_lining prefix="rhs"/>
-    
-    <!-- <xacro:if value="${fix_baselink == 'true'}">
-    	<joint name="gripper2parent" type="fixed">
-    	  <parent link="${arg baselink_parent_name}"/>
-    	  <origin xyz="${arg parent_sees_baselink_xyz}" rpy="${arg parent_sees_baselink_rpy}"/>
-	      <child  link="baselink"/>
-    	</joint>
-    </xacro:if> -->
+  <xacro:include filename="$(find gripper_description)/urdf/gripper.reusable.xacro" />
+  <xacro:mk_parallel_gripper ns="$(arg namespace)" />
+
+  <xacro:include filename="$(find gripper_gazebo)/sdf/gripper_joints_for_sim.reusable.gazebo" />
+  <xacro:mk_parallel_gripper_gz_4bar ns="$(arg namespace)" />
+  <xacro:mk_parallel_gripper_gz_gearbox_coupling ns="$(arg namespace)" />
+  <xacro:gripper_friction_lining ns="$(arg namespace)" prefix="lhs" />
+  <xacro:gripper_friction_lining ns="$(arg namespace)" prefix="rhs" />
+
+  <gazebo>
+    <self_collide>true</self_collide>
 
     <!-- https://answers.ros.org/question/393006/urdf-link-not-properly-fixed-to-world/ -->
     <!-- but it really doesn't work if I apply namespace to the spawner node...??? -->
     <!-- Somehow I discovered the soln below... -->
-    <gazebo>
-      <link name="/world"/>
-      <joint name="gripper2parent" type="fixed">
-        <!--this is not urdf any more!-->
-        <!-- <parent link="world"/> -->
-        <!-- <child  link="base_link"/> -->
-        <!-- <origin xyz="0 0.1 0" rpy="0 -1.571 0"/> -->
-        
-        <parent>world</parent>
-        <child>base_link</child>
-        <!-- <pose relative_to="/world">0.0 0.0 0.1  0.0 -1.571 0.0</pose> -->
-        <!-- specify it in the spawner instead! -->
-      </joint>
-    </gazebo>
+    <link name="/world" />
+    <joint name="$(arg namespace)/gripper2parent" type="fixed">
+      <!--this is not urdf any more!-->
+      <parent>world</parent>
+      <child>$(arg namespace)/base_link</child>
+      <!-- <pose relative_to="/world">0.0 0.0 0.1  0.0 -1.571 0.0</pose> -->
+      <!-- specify it in the spawner instead! -->
+    </joint>
+  </gazebo>
 </robot>

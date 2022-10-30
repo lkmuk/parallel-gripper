@@ -62,41 +62,41 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_link:
+        gripper/base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        body:
+        gripper/body:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: false
-        lhs_claw:
+        gripper/lhs_claw:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        lhs_inner_beam:
+        gripper/lhs_inner_beam:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: false
-        lhs_outer_beam:
+        gripper/lhs_outer_beam:
           Alpha: 1
           Show Axes: true
           Show Trail: false
           Value: true
-        rhs_claw:
+        gripper/rhs_claw:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rhs_inner_beam:
+        gripper/rhs_inner_beam:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: false
-        rhs_outer_beam:
+        gripper/rhs_outer_beam:
           Alpha: 1
           Show Axes: true
           Show Trail: false
@@ -111,7 +111,7 @@ Visualization Manager:
       Class: rviz/Axes
       Enabled: true
       Length: 0.009999999776482582
-      Name: body
+      Name: gripper/body
       Radius: 0.0020000000949949026
       Reference Frame: <Fixed Frame>
       Show Trail: false
@@ -120,7 +120,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: body
+    Fixed Frame: gripper/body
     Frame Rate: 30
   Name: root
   Tools:

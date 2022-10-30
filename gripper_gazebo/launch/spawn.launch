@@ -6,7 +6,7 @@
   <!-- send the robot XML to param server -->
   <param 
     name="robot_description" 
-    command="$(find xacro)/xacro $(find gripper_gazebo)/sdf/gripper_fixed.xacro"
+    command="$(find xacro)/xacro $(find gripper_gazebo)/sdf/gripper_fixed.xacro namespace:=$(arg namespace)"
   />
   
   <!-- to have more than one gripper make sure to have apply namespace-->

@@ -2,7 +2,9 @@
 <launch>
     <arg name="namespace" default="gripper"/>
     <group ns="$(arg namespace)">
-        <include file="$(find gripper_gazebo)/launch/spawn.launch"/>
+        <include file="$(find gripper_gazebo)/launch/spawn.launch">
+            <arg name="namespace" value="$(arg namespace)"/>
+        </include>
     </group>
 
     <include file="$(find gazebo_ros)/launch/empty_world.launch">

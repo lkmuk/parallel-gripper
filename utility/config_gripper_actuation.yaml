@@ -3,7 +3,7 @@
 
 # Will joint_state_publisher published the passive joint state?
 control:
-  - {joint: "lhs_j1", mode: "pos"}
+  - {joint: "lhs_j1", mode: "position"}
 
 # it is possible to have many possible drive concepts, 
 # e.g. torque control on all eight joints in the base_link

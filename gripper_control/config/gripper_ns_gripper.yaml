@@ -1,0 +1,9 @@
+lhs_j1_pos_ctr_pid:
+  type: "position_controllers/JointPositionController"
+  # this (URDF-)namespace is assumed to be "gripper"
+  joint: "gripper/lhs_j1" # from hindsight, the augmentation config should be pruned
+  # the command will be under {ROS_namespace that you spawn the controller}/lhs_j1_pos_ctr_pid/command
+
+lhs_j1_measurement_pub:
+  type: "joint_state_controller/JointStateController"
+  publish_rate: 100

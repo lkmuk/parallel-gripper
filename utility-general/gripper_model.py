@@ -4,21 +4,14 @@ from collections import namedtuple, OrderedDict
 
 ctr_spec_entry = namedtuple("ctr_spec_entry", ["joint","mode"])
 passive_entry = namedtuple("passive_entry", ["src","to","multiplier", "gearing"])
-valid_control_mode = "pos", # TODO extension! with vel, eff
+
+from urdf_kit.edit_transmission import SUPPORTED_JOINT_CMD_MODE
+valid_control_mode = SUPPORTED_JOINT_CMD_MODE
 
 def assert_naming_convention(str_under_test):
     assert isinstance(str_under_test, str), "You gave ["+str(str_under_test)+"]."
     assert re.match(r"[lr]hs_j[1-4]",str_under_test), "please adhere to the naming convention! You gave ["+str_under_test+ "]. Please check the doc!"
 
-# ??? what about ?hs_j4 ??? (not found in Onshape-to-Robot export!)
-# need to add that first? 
-
-# zero-position!
-
-# assumption! j4 never active!!!!
-
-
-# no checks on lhs???
 class gripper_actuation_concept:
     def __init__(self, yaml_dom: dict):
         

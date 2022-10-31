@@ -23,4 +23,16 @@
               "
         respawn="false" output="screen"
   />
+
+  <!-- ROS Control stuff (TODO not just for gazebo) -->
+  <rosparam command="load" file="$(find gripper_control)/config/gripper_ns_gripper.yaml"/>
+  <node pkg="controller_manager" type="spawner" 
+      name="servo_controller_spawner"
+      args="lhs_j1_pos_ctr_pid lhs_j1_measurement_pub"
+  />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <!-- specific to gazebo_ros_control -->
+  <rosparam command="load" file="$(find gripper_gazebo)/config/position_loop_pid.yaml"/>
+  
 </launch>

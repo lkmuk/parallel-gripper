@@ -363,5 +363,14 @@
       <joint_properties friction="0.0" />
       <mimic joint="${ns}/lhs_j1" multiplier="1" offset="0" />
     </joint>
+    <transmission name="${ns}/lhs_j1_transmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${ns}/lhs_j1">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${ns}/lhs_j1_actuator">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
   </xacro:macro>
 </robot>

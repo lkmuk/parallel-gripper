@@ -3,6 +3,7 @@ import xml.etree.ElementTree as ET
 from urdf_kit.automation.base import generic_xacro_export, export_target_spec
 from urdf_kit.edit_joints import grab_expected_joints_handle
 from urdf_kit.edit_links import rename_link
+from urdf_kit.edit_transmission import make_simple_transmission_elem
 
 from pathlib import Path
 import sys
@@ -39,7 +40,7 @@ class gripper_xacro_export(generic_xacro_export):
 
         self.mimic_spec_list = actuation_spec._passive_joint_list
         self.mimic_joint_name_list = [spec.to for spec in self.mimic_spec_list]
-        
+
         # # better first run `_validate_consistency_with_src_URDF`
         # self.mimic_joint_handle_list = grab_expected_joints_handle(
         #     self.urdf_root, 
@@ -103,6 +104,8 @@ class gripper_xacro_export(generic_xacro_export):
             # TODO implement this in urdf_kit (I guess many projects also need this)
 
     def _inject_ns_aware_elems(self):
+        print("injecting namespace-aware elements...")
+        print("   working on the <mimic> elements")
         mimic_joint_handle_list = grab_expected_joints_handle(
             self.urdf_root, 
             self.mimic_joint_name_list
@@ -118,28 +121,10 @@ class gripper_xacro_export(generic_xacro_export):
                 offset = "0"
             )
 
-        # transmission flag
-        # TODO
-   		
-
-
-# if __name__ == "__main__":
-
-#     from pathlib  import Path
-#     this_dir = Path(__file__).resolve().parent
-
-#     import yaml
-#     with open(this_dir/"config_gripper_actuation.yaml","r") as f:
-#         data = yaml.safe_load(f)
-#     my_spec = gripper_actuation_concept(data)
-#     my_spec.print()
-
-#     import xml.etree.ElementTree as ET
-#     fpath_urdf_original = this_dir/"robot.urdf"
-#     fpath_urdf_new = this_dir/"robot_augmented.urdf"
-    
-#     editor = gripper_urdf_from_Onshape(
-#         ET.parse(fpath_urdf_original).getroot(), 
-#         my_spec
-#     )
-#     editor.write(fpath_urdf_new)
+        print("   working on the <transmission> elements")
+        for actuator_joint_data in self.actuation_spec._active_joint_list:
+            joint_name = r'${ns}/'+actuator_joint_data.joint
+            joint_ctr_mode = actuator_joint_data.mode
+            transmission_elem = make_simple_transmission_elem(joint_name, joint_ctr_mode)
+            transmission_elem
+            self.urdf_root.append(transmission_elem)

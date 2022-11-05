@@ -7,8 +7,8 @@
       <real_time_update_rate>1000</real_time_update_rate>
       <ode>
         <constraints>
-            <cfm>0.1</cfm>
-            <erp>0.4</erp>
+            <cfm>0.001</cfm>
+            <erp>0.96</erp>
         </constraints>
       </ode>
     </physics>

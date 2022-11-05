@@ -10,10 +10,13 @@
     ],
 
     "useScads": true,
+    "purgeCollisionStl_enabled": true,
+    "purgeCollisionStl_whitelist":["jaw_plate"],
+    
 
     "postImportCommands":[
-        "python gripper_model.py jaw_plate",
         "cp *.stl ../gripper_description/mesh",
-        "mv robot_augmented.urdf ../gripper_description/urdf/"
+        "python postprocessing.py",
+        "rm *part"
     ]
 }

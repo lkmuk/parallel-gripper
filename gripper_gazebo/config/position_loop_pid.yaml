@@ -1,0 +1,13 @@
+#  https://github.com/ros-simulation/gazebo_ros_pkgs/blob/231a7219b36b8a6cdd100b59f66a3df2955df787/gazebo_ros_control/src/default_robot_hw_sim.cpp#L220
+#  https://github.com/ros-controls/control_toolbox/blob/29190b4acab8c62c9e1787310674aa739f6ff93c/src/pid_ros.cpp#L132
+# This can be viewed as an actuator model of the gripper (embedded position) contorl system 
+# The plant model involves also the friction & joint limits parameters (inside the URDF)
+gazebo_ros_control:
+  pid_gains:
+    gripper/lhs_j1: # this won't work if you have (URDF-side) namespace
+      p: 1.0
+      i: 0.01
+      d: 0.1
+      i_clamp_max: 0.6
+      i_clamp_min: -0.6
+      antiwindup: true

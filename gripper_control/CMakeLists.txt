@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(gripper_gazebo)
+project(gripper_control)
 
 
 ## Find catkin macros and libraries
@@ -25,8 +25,8 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES gripper_gazebo
-#  CATKIN_DEPENDS gripper_gazebo
+#  LIBRARIES gripper_control
+#  CATKIN_DEPENDS gripper_control
 #  DEPENDS system_lib
 )
 

@@ -2,7 +2,7 @@
 
 <launch>
   <arg name="focusOnJ4" default="false"/>
-  <param name="robot_description" command="$(find xacro)/xacro $(find gripper_description)/urdf/robot_augmented.urdf namespace:=uav" />
+  <param name="robot_description" command="$(find xacro)/xacro $(find gripper_description)/urdf/gripper_for_rviz.urdf.xacro namespace:=gripper" />
   <node name="joint_state_setter" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
   	<param name="use_mimic_tags" value="true"/>
   </node>

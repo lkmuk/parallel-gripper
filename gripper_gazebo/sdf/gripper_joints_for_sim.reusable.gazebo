@@ -45,7 +45,7 @@
     <xacro:macro name="mk_parallel_gripper_gz_gearbox_coupling" params="ns">
         <!--the gearing connection between lhs_j1 and rhs_j1-->
         <gazebo>
-            <joint name="j1_coupling" type="gearbox">
+            <joint name="${ns}/j1_coupling" type="gearbox">
                 <parent>${ns}/lhs_inner_beam</parent>
                 <child>${ns}/rhs_inner_beam</child>
                 <gearbox_ratio>1</gearbox_ratio>

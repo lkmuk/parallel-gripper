@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<robot name="gripper_rviz_with_0dof" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:arg name="namespace" default="my_gripper"/>
+
+    <xacro:include filename="$(find gripper_description)/urdf/gripper_0dof.reusable.xacro"/>
+    <xacro:mk_parallel_gripper_with_0dof ns="$(arg namespace)"/>
+
+</robot>

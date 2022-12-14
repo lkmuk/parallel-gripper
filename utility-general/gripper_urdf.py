@@ -5,6 +5,7 @@ from urdf_kit.edit_joints import grab_expected_joints_handle
 from urdf_kit.edit_links import rename_link
 from urdf_kit.edit_transmission import make_simple_transmission_elem
 from urdf_kit.graph.simplify import fix_revolute_joint
+from urdf_kit.graph.tree import kinematic_tree
 from urdf_kit.misc import remove_subelement_by_tag
 
 from pathlib import Path
@@ -178,6 +179,14 @@ class gripper_xacro_export(generic_xacro_export):
             angle = freeze_angle_global * joint_spec.multiplier
             print("  freezing joint [",joint_name_list[i],"] with angle [", angle, "rad ]")
             fix_revolute_joint(joint_elem, angle)
+        
+        print("now merging fixed joints upstream")
+        robot = kinematic_tree(self.urdf_root)
+        robot.merge_fixed_joints() # no whitelist
+        # print(robot.links.keys())
+        robot.print_graph(link_sorting='depth_first')
+        
+        
         
 
     def _make_targets(self):

@@ -1,4 +1,4 @@
-import xml.etree.ElementTree as ET 
+import xml.etree.ElementTree as ET
 
 from urdf_kit.automation.base import generic_xacro_export, export_target_spec
 from urdf_kit.edit_joints import grab_expected_joints_handle
@@ -124,6 +124,25 @@ class gripper_xacro_export(generic_xacro_export):
                 mimic_joint_ptr.attrib["type"] = "continuous"
             # TODO implement this in urdf_kit (I guess many projects also need this)
 
+        # working on an extra dummy TCP link
+        import json 
+        with open(self.src_dir/"config.json", "r") as f:
+            OTR_config_json_data = json.load(f)
+        if OTR_config_json_data['TCPwrtBaselink']['x']:
+            # tool-center-point 
+            origin_xyz = str(OTR_config_json_data['TCPwrtBaselink']['x'])+" 0 0"
+            origin_rpy = "0 0 0"
+            TCP_joint_elem = ET.Element("joint", name = 'Base2TCP', type="fixed")
+            TCP_joint_subelems = (
+                ET.Element("origin", xyz=origin_xyz, rpy=origin_rpy),
+                ET.Element("parent", link='base_link'),
+                ET.Element("child", link='TCP')
+            )
+            for TCP_joint_subelem in TCP_joint_subelems:
+                TCP_joint_elem.append(TCP_joint_subelem)
+            self.urdf_root.append(TCP_joint_elem)
+            self.urdf_root.append(ET.Element("link", name='TCP')) # which is a dummy
+
     def _inject_ns_aware_elems(self):
         print("injecting namespace-aware elements...")
         print("   working on the <mimic> elements")
@@ -149,6 +168,8 @@ class gripper_xacro_export(generic_xacro_export):
             transmission_elem = make_simple_transmission_elem(joint_name, joint_ctr_mode)
             transmission_elem
             self.urdf_root.append(transmission_elem)
+
+        
     
     def freeze_joints(self):
         if not self.has_frozen_output:
@@ -182,7 +203,10 @@ class gripper_xacro_export(generic_xacro_export):
         
         print("now merging fixed joints upstream")
         robot = kinematic_tree(self.urdf_root)
-        robot.merge_fixed_joints() # no whitelist
+        if r'${ns}/TCP' in robot.links.keys():
+            robot.merge_fixed_joints(link_whitelist= [r'${ns}/TCP']) 
+        else:
+            robot.merge_fixed_joints()
         # print(robot.links.keys())
         robot.print_graph(link_sorting='depth_first')
         

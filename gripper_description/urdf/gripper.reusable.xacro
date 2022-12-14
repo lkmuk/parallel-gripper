@@ -363,6 +363,12 @@
       <joint_properties friction="0.0" />
       <mimic joint="${ns}/lhs_j1" multiplier="1" offset="0" />
     </joint>
+    <joint name="${ns}/Base2TCP" type="fixed">
+      <origin xyz="0.098 0 0" rpy="0 0 0" />
+      <parent link="${ns}/base_link" />
+      <child link="${ns}/TCP" />
+    </joint>
+    <link name="${ns}/TCP" />
     <transmission name="${ns}/lhs_j1_transmission">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${ns}/lhs_j1">

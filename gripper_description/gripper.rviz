@@ -7,6 +7,8 @@ Panels:
         - /Global Options1
         - /Status1
         - /RobotModel1
+        - /RobotModel1/Links1
+        - /RobotModel1/Links1/gripper/TCP1
       Splitter Ratio: 0.5
     Tree Height: 549
   - Class: rviz/Selection
@@ -62,6 +64,10 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        gripper/TCP:
+          Alpha: 1
+          Show Axes: true
+          Show Trail: false
         gripper/base_link:
           Alpha: 1
           Show Axes: false
@@ -135,7 +141,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 0.2520110607147217
+      Distance: 0.3540574014186859
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -172,4 +178,4 @@ Window Geometry:
     collapsed: true
   Width: 1048
   X: 658
-  Y: 82
+  Y: 45

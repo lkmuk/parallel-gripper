@@ -13,6 +13,9 @@
     "purgeCollisionStl_enabled": true,
     "purgeCollisionStl_whitelist":["jaw_plate"],
     
+    "TCPwrtBaselink": {
+        "x": 0.098
+    },
 
     "postImportCommands":[
         "cp *.stl ../gripper_description/mesh",

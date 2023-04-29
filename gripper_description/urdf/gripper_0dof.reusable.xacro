@@ -2,9 +2,9 @@
   <xacro:macro name="mk_parallel_gripper_with_0dof" params="ns">
     <link name="${ns}/base_link">
       <inertial>
-        <mass value="0.31845672999999997" />
-        <origin xyz="0.04539854906879699 0.00439535282382325 0.00023774165341415557" rpy="0.0 -0.0 0.0" />
-        <inertia ixx="0.0006409486799300743" iyy="0.0005001150057078902" izz="0.0010633935422334798" ixy="7.585469594750223e-06" ixz="-6.942599742535248e-06" iyz="6.949343630899062e-06" />
+        <mass value="0.24260633" />
+        <origin xyz="0.0401869132568203 0.005767597704663576 0.00031208746430299645" rpy="0.0 -0.0 0.0" />
+        <inertia ixx="0.00015712609610589267" iyy="0.0004032300421111192" izz="0.0004970779068413319" ixy="-1.1037911176688073e-05" ixz="-4.795827127861542e-06" iyz="-2.7051791110215334e-06" />
       </inertial>
       <visual>
         <origin xyz="0.002 0.0 -0.017" rpy="0.0 -0.0 0.0" />
@@ -103,7 +103,7 @@
         </geometry>
       </collision>
       <visual>
-        <origin xyz="0.026643426427809192 0.004393370136669067 0.0" rpy="-0.0 -0.0 -0.7853981633974481" />
+        <origin xyz="0.02225113937201575 0.014815122034022526 0.0" rpy="-0.0 -0.0 -1.558468163397448" />
         <geometry>
           <mesh filename="package://gripper_description/mesh/rod_inner_lhs_top.stl" />
         </geometry>
@@ -112,7 +112,7 @@
         </material>
       </visual>
       <visual>
-        <origin xyz="0.026643426427809192 0.004393370136669067 -0.006999999999999999" rpy="0.0 -0.0 2.3561971437821385" />
+        <origin xyz="0.02225113937201575 0.014815122034022526 -0.006999999999999999" rpy="0.0 -0.0 1.583121836602552" />
         <geometry>
           <mesh filename="package://gripper_description/mesh/rod_inner_bottom.stl" />
         </geometry>
@@ -121,7 +121,7 @@
         </material>
       </visual>
       <visual>
-        <origin xyz="0.03725 0.015 0.019000000000000003" rpy="0.0 -0.0 2.3561971437821385" />
+        <origin xyz="0.03725 0.015 0.019000000000000003" rpy="0.0 -0.0 1.583121836602552" />
         <geometry>
           <mesh filename="package://gripper_description/mesh/dynamixel_horn__list_ndk53xfpevccij_default.stl" />
         </geometry>
@@ -130,7 +130,7 @@
         </material>
       </visual>
       <visual>
-        <origin xyz="0.06199867166844522 0.03374880301443885 0.0" rpy="-0.0 -0.0 -2.1438260709158268e-18" />
+        <origin xyz="0.07224734146529657 0.009431381920614101 0.0" rpy="-0.0 -0.0 -2.8260753619205716e-19" />
         <geometry>
           <mesh filename="package://gripper_description/mesh/jaw_plate.stl" />
         </geometry>
@@ -139,31 +139,31 @@
         </material>
       </visual>
       <collision>
-        <origin xyz="0.03725 0.015 0.021500000000000002" rpy="-0.0 -0.0 -0.7853981633974481" />
+        <origin xyz="0.03725 0.015 0.021500000000000002" rpy="-0.0 -0.0 -1.558468163397448" />
         <geometry>
           <cylinder length="0.005" radius="0.013" />
         </geometry>
       </collision>
       <collision>
-        <origin xyz="0.05103854564384805 0.028788618822330213 0.021500000000000002" rpy="-0.0 -0.0 -0.7853981633974481" />
+        <origin xyz="0.05674851881637952 0.015240341355770714 0.021500000000000002" rpy="-0.0 -0.0 -1.558468163397448" />
         <geometry>
           <box size="0.01 0.039 0.005" />
         </geometry>
       </collision>
       <collision>
-        <origin xyz="0.051392098096254404 0.02914217315110791 -0.022" rpy="0.0 -0.0 2.3561971437821385" />
+        <origin xyz="0.057248480837312335 0.01524650395463663 -0.022" rpy="0.0 -0.0 1.583121836602552" />
         <geometry>
           <box size="0.012 0.036 0.005" />
         </geometry>
       </collision>
       <collision>
-        <origin xyz="0.03725 0.015 -0.022" rpy="0.0 -0.0 2.3561971437821385" />
+        <origin xyz="0.03725 0.015 -0.022" rpy="0.0 -0.0 1.583121836602552" />
         <geometry>
           <cylinder length="0.005" radius="0.011" />
         </geometry>
       </collision>
       <collision>
-        <origin xyz="0.06199867166844522 0.03374880301443885 0.0" rpy="-0.0 -0.0 -2.1438260709158268e-18" />
+        <origin xyz="0.07224734146529657 0.009431381920614101 0.0" rpy="-0.0 -0.0 -2.8260753619205716e-19" />
         <geometry>
           <mesh filename="package://gripper_description/mesh/jaw_plate.stl" />
         </geometry>
@@ -172,7 +172,7 @@
         </material>
       </collision>
       <visual>
-        <origin xyz="0.013714466094067266 0.008180201480691873 -0.002500084436701384" rpy="4.529961130895335e-06 1.8763713373682258e-06 -0.7853981633956878" />
+        <origin xyz="-0.007501619800169331 0.019693427293675844 -0.002500084436701384" rpy="4.529961130895334e-06 1.8763713373682254e-06 -1.5584721633956877" />
         <geometry>
           <mesh filename="package://gripper_description/mesh/rod_outer.stl" />
         </geometry>
@@ -181,13 +181,13 @@
         </material>
       </visual>
       <collision>
-        <origin xyz="0.02962436867076458 0.05237436867072102 3.283649840686403e-08" rpy="4.529961130895335e-06 1.8763713373682258e-06 -0.7853981633956878" />
+        <origin xyz="0.03474867102301052 0.040215667399886794 3.283649840686403e-08" rpy="4.529961130895334e-06 1.8763713373682254e-06 -1.5584721633956877" />
         <geometry>
           <box size="0.01 0.043 0.005" />
         </geometry>
       </collision>
       <visual>
-        <origin xyz="0.0266434372424969 -0.004393359322049782 0.0" rpy="0.0 0.0 0.7853981633974483" />
+        <origin xyz="0.02225113906269799 -0.014815147130192935 0.0" rpy="0.0 0.0 1.5584761633974482" />
         <geometry>
           <mesh filename="package://gripper_description/mesh/rod_inner_rhs_top.stl" />
         </geometry>
@@ -196,7 +196,7 @@
         </material>
       </visual>
       <visual>
-        <origin xyz="0.0266434372424969 -0.004393359322049782 -0.007" rpy="0.0 0.0 0.7853981633974483" />
+        <origin xyz="0.02225113906269799 -0.014815147130192935 -0.007" rpy="0.0 0.0 1.5584761633974482" />
         <geometry>
           <mesh filename="package://gripper_description/mesh/rod_inner_bottom.stl" />
         </geometry>
@@ -205,7 +205,7 @@
         </material>
       </visual>
       <visual>
-        <origin xyz="0.06199864643418446 -0.03374882824856107 1.1258228025210527e-08" rpy="-3.1415907772184557 1.8763713373682256e-06 1.7603916580989416e-12" />
+        <origin xyz="0.07224734218704859 -0.009431323362893713 -1.1258228025210523e-08" rpy="3.1415907772184557 -1.8763713373682258e-06 1.7605045785521608e-12" />
         <geometry>
           <mesh filename="package://gripper_description/mesh/jaw_plate.stl" />
         </geometry>
@@ -214,31 +214,31 @@
         </material>
       </visual>
       <collision>
-        <origin xyz="0.03725 -0.015 0.0215" rpy="0.0 0.0 0.7853981633974483" />
+        <origin xyz="0.03725 -0.015 0.0215" rpy="0.0 0.0 1.5584761633974482" />
         <geometry>
           <cylinder length="0.005" radius="0.013" />
         </geometry>
       </collision>
       <collision>
-        <origin xyz="0.05103853158475403 -0.028788632881335284 0.0215" rpy="0.0 0.0 0.7853981633974483" />
+        <origin xyz="0.05674851921849261 -0.015240308730749184 0.0215" rpy="0.0 0.0 1.5584761633974482" />
         <geometry>
           <box size="0.01 0.039 0.005" />
         </geometry>
       </collision>
       <collision>
-        <origin xyz="0.051392083676670794 -0.02914218757060029 -0.022" rpy="0.0 0.0 0.7853981633974483" />
+        <origin xyz="0.057248481249736013 -0.015246470493076087 -0.022" rpy="0.0 0.0 1.5584761633974482" />
         <geometry>
           <box size="0.012 0.036 0.005" />
         </geometry>
       </collision>
       <collision>
-        <origin xyz="0.03725 -0.015 -0.022" rpy="0.0 0.0 0.7853981633974483" />
+        <origin xyz="0.03725 -0.015 -0.022" rpy="0.0 0.0 1.5584761633974482" />
         <geometry>
           <cylinder length="0.005" radius="0.011" />
         </geometry>
       </collision>
       <collision>
-        <origin xyz="0.06199864643418446 -0.03374882824856107 1.1258228025210527e-08" rpy="-3.1415907772184557 1.8763713373682256e-06 1.7603916580989416e-12" />
+        <origin xyz="0.07224734218704859 -0.009431323362893713 -1.1258228025210523e-08" rpy="3.1415907772184557 -1.8763713373682258e-06 1.7605045785521608e-12" />
         <geometry>
           <mesh filename="package://gripper_description/mesh/jaw_plate.stl" />
         </geometry>
@@ -247,7 +247,7 @@
         </material>
       </collision>
       <visual>
-        <origin xyz="0.0738185424949238 -0.06828426461338784 -0.002500075054844703" rpy="-7.772184558163525e-07 -1.8763713373682254e-06 0.7853981633956878" />
+        <origin xyz="0.07749191590321527 -0.02074094516778973 -0.002500075054844703" rpy="-7.772184558163529e-07 -1.8763713373682254e-06 1.5584721633956877" />
         <geometry>
           <mesh filename="package://gripper_description/mesh/rod_outer.stl" />
         </geometry>
@@ -256,7 +256,7 @@
         </material>
       </visual>
       <collision>
-        <origin xyz="0.02962436867076458 -0.05237436867072102 -3.283649840686403e-08" rpy="-7.772184558163525e-07 -1.8763713373682254e-06 0.7853981633956878" />
+        <origin xyz="0.03474867102301052 -0.040215667399886794 -3.283649840686403e-08" rpy="-7.772184558163529e-07 -1.8763713373682254e-06 1.5584721633956877" />
         <geometry>
           <box size="0.01 0.043 0.005" />
         </geometry>
@@ -268,5 +268,26 @@
       <child link="${ns}/TCP" />
     </joint>
     <link name="${ns}/TCP" />
+    <gazebo reference="${ns}/body">
+      <material>Gazebo/DarkGray</material>
+    </gazebo>
+    <gazebo reference="${ns}/lhs_inner_beam">
+      <material>Gazebo/Gray</material>
+    </gazebo>
+    <gazebo reference="${ns}/lhs_outer_beam">
+      <material>Gazebo/Gray</material>
+    </gazebo>
+    <gazebo reference="${ns}/lhs_claw">
+      <material>Gazebo/Green</material>
+    </gazebo>
+    <gazebo reference="${ns}/rhs_inner_beam">
+      <material>Gazebo/Gray</material>
+    </gazebo>
+    <gazebo reference="${ns}/rhs_outer_beam">
+      <material>Gazebo/Gray</material>
+    </gazebo>
+    <gazebo reference="${ns}/rhs_claw">
+      <material>Gazebo/Green</material>
+    </gazebo>
   </xacro:macro>
 </robot>

@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 
 from urdf_kit.automation.base import generic_xacro_export, export_target_spec
 from urdf_kit.edit_joints import grab_expected_joints_handle
-from urdf_kit.edit_links import rename_link
+from urdf_kit.edit_links import rename_link, add_link_appearance_in_gazebo
 from urdf_kit.edit_transmission import make_simple_transmission_elem
 from urdf_kit.graph.simplify import fix_revolute_joint
 from urdf_kit.graph.tree import kinematic_tree
@@ -169,6 +169,12 @@ class gripper_xacro_export(generic_xacro_export):
             transmission_elem
             self.urdf_root.append(transmission_elem)
 
+        print("   working on the Gazebo appearance")
+        add_link_appearance_in_gazebo(self.urdf_root, r"${ns}/body", "Gazebo/DarkGray")
+        for prefix in ("lhs_","rhs_"):
+            add_link_appearance_in_gazebo(self.urdf_root, r'${ns}/'+prefix+"inner_beam", "Gazebo/Gray")
+            add_link_appearance_in_gazebo(self.urdf_root, r'${ns}/'+prefix+"outer_beam", "Gazebo/Gray")
+            add_link_appearance_in_gazebo(self.urdf_root, r'${ns}/'+prefix+"claw", "Gazebo/Green")
         
     
     def freeze_joints(self):

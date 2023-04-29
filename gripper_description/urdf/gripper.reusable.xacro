@@ -111,7 +111,7 @@
     </link>
     <link name="${ns}/lhs_inner_beam">
       <visual>
-        <origin xyz="0 0.015 -0.017" rpy="0 0 3.14159" />
+        <origin xyz="0 0.015 -0.017" rpy="0 0 -3.14159" />
         <geometry>
           <mesh filename="package://gripper_description/mesh/rod_inner_lhs_top.stl" />
         </geometry>
@@ -120,13 +120,13 @@
         </material>
       </visual>
       <collision>
-        <origin xyz="0 0 0.0045" rpy="0 0 3.14159" />
+        <origin xyz="0 0 0.0045" rpy="0 0 -3.14159" />
         <geometry>
           <cylinder length="0.005" radius="0.013" />
         </geometry>
       </collision>
       <collision>
-        <origin xyz="0 -0.0195 0.0045" rpy="0 0 3.14159" />
+        <origin xyz="0 -0.0195 0.0045" rpy="0 0 -3.14159" />
         <geometry>
           <box size="0.01 0.039 0.005" />
         </geometry>
@@ -188,12 +188,12 @@
       </collision>
       <inertial>
         <origin xyz="0.00954335 0.0109092 -3.55182e-09" rpy="0 0 0" />
-        <mass value="0.0706194" />
-        <inertia ixx="1.06828e-05" ixy="6.2682e-06" ixz="0" iyy="3.9212e-05" iyz="1.29448e-11" izz="3.75191e-05" />
+        <mass value="0.0326942" />
+        <inertia ixx="4.94575e-06" ixy="2.90194e-06" ixz="0" iyy="1.81537e-05" iyz="5.99296e-12" izz="1.73699e-05" />
       </inertial>
     </link>
     <joint name="${ns}/lhs_j3" type="continuous">
-      <origin xyz="0 -0.035 -0.017" rpy="0 0 3.14159" />
+      <origin xyz="0 -0.035 -0.017" rpy="0 0 -2.36852" />
       <parent link="${ns}/lhs_inner_beam" />
       <child link="${ns}/lhs_claw" />
       <axis xyz="0 0 1" />
@@ -202,7 +202,7 @@
       <mimic joint="${ns}/lhs_j1" multiplier="-1" offset="0" />
     </joint>
     <joint name="${ns}/lhs_j1" type="revolute">
-      <origin xyz="0.03725 0.015 0.017" rpy="0 0 -3.14159" />
+      <origin xyz="0.03725 0.015 0.017" rpy="0 0 2.36852" />
       <parent link="${ns}/base_link" />
       <child link="${ns}/lhs_inner_beam" />
       <axis xyz="0 0 1" />
@@ -232,7 +232,7 @@
       </inertial>
     </link>
     <joint name="${ns}/lhs_j2" type="continuous">
-      <origin xyz="0.01725 0.04 0" rpy="-3.14159 0 0" />
+      <origin xyz="0.01725 0.04 0" rpy="-3.14159 0 -0.773074" />
       <parent link="${ns}/base_link" />
       <child link="${ns}/lhs_outer_beam" />
       <axis xyz="0 0 1" />
@@ -310,12 +310,12 @@
       </collision>
       <inertial>
         <origin xyz="0.00954335 0.0109092 -3.55182e-09" rpy="0 0 0" />
-        <mass value="0.0706194" />
-        <inertia ixx="1.06828e-05" ixy="6.2682e-06" ixz="0" iyy="3.9212e-05" iyz="1.29448e-11" izz="3.75191e-05" />
+        <mass value="0.0326942" />
+        <inertia ixx="4.94575e-06" ixy="2.90194e-06" ixz="0" iyy="1.81537e-05" iyz="5.99296e-12" izz="1.73699e-05" />
       </inertial>
     </link>
     <joint name="${ns}/rhs_j3" type="continuous">
-      <origin xyz="0.035 0 0" rpy="-3.14159 0 1.5708" />
+      <origin xyz="0.035 0 0" rpy="3.14159 0 0.797722" />
       <parent link="${ns}/rhs_inner_beam" />
       <child link="${ns}/rhs_claw" />
       <axis xyz="0 0 1" />
@@ -324,7 +324,7 @@
       <mimic joint="${ns}/lhs_j1" multiplier="-1" offset="0" />
     </joint>
     <joint name="${ns}/rhs_j1" type="continuous">
-      <origin xyz="0.03725 -0.015 0" rpy="0 0 -1.5708" />
+      <origin xyz="0.03725 -0.015 0" rpy="0 0 -0.797722" />
       <parent link="${ns}/base_link" />
       <child link="${ns}/rhs_inner_beam" />
       <axis xyz="0 0 1" />
@@ -355,7 +355,7 @@
       </inertial>
     </link>
     <joint name="${ns}/rhs_j2" type="continuous">
-      <origin xyz="0.01725 -0.04 0" rpy="-3.14159 0 0" />
+      <origin xyz="0.01725 -0.04 0" rpy="-3.14159 0 0.773074" />
       <parent link="${ns}/base_link" />
       <child link="${ns}/rhs_outer_beam" />
       <axis xyz="0 0 1" />
@@ -378,5 +378,26 @@
         <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
+    <gazebo reference="${ns}/body">
+      <material>Gazebo/DarkGray</material>
+    </gazebo>
+    <gazebo reference="${ns}/lhs_inner_beam">
+      <material>Gazebo/Gray</material>
+    </gazebo>
+    <gazebo reference="${ns}/lhs_outer_beam">
+      <material>Gazebo/Gray</material>
+    </gazebo>
+    <gazebo reference="${ns}/lhs_claw">
+      <material>Gazebo/Green</material>
+    </gazebo>
+    <gazebo reference="${ns}/rhs_inner_beam">
+      <material>Gazebo/Gray</material>
+    </gazebo>
+    <gazebo reference="${ns}/rhs_outer_beam">
+      <material>Gazebo/Gray</material>
+    </gazebo>
+    <gazebo reference="${ns}/rhs_claw">
+      <material>Gazebo/Green</material>
+    </gazebo>
   </xacro:macro>
 </robot>

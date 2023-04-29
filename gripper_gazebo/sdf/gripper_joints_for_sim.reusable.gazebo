@@ -91,7 +91,6 @@
 			</collision> -->
 
             <!-- temporary soln: modify the existing collision geometry-->
-            <material>Gazebo/Green</material> <!-- TODO put it in a more sensible place-->
             <mu1>0.7</mu1>
             <!-- <mu>0.7</mu> -->
             <maxContacts>5</maxContacts>

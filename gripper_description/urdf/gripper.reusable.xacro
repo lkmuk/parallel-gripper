@@ -111,7 +111,7 @@
     </link>
     <link name="${ns}/lhs_inner_beam">
       <visual>
-        <origin xyz="0 0.015 -0.017" rpy="0 0 -3.14159" />
+        <origin xyz="0 0.015 -0.017" rpy="0 0 3.14159" />
         <geometry>
           <mesh filename="package://gripper_description/mesh/rod_inner_lhs_top.stl" />
         </geometry>
@@ -120,13 +120,13 @@
         </material>
       </visual>
       <collision>
-        <origin xyz="0 0 0.0045" rpy="0 0 -3.14159" />
+        <origin xyz="0 0 0.0045" rpy="0 0 3.14159" />
         <geometry>
           <cylinder length="0.005" radius="0.013" />
         </geometry>
       </collision>
       <collision>
-        <origin xyz="0 -0.0195 0.0045" rpy="0 0 -3.14159" />
+        <origin xyz="0 -0.0195 0.0045" rpy="0 0 3.14159" />
         <geometry>
           <box size="0.01 0.039 0.005" />
         </geometry>
@@ -193,7 +193,7 @@
       </inertial>
     </link>
     <joint name="${ns}/lhs_j3" type="continuous">
-      <origin xyz="0 -0.035 -0.017" rpy="0 0 -2.36852" />
+      <origin xyz="0 -0.035 -0.017" rpy="0 0 3.14159" />
       <parent link="${ns}/lhs_inner_beam" />
       <child link="${ns}/lhs_claw" />
       <axis xyz="0 0 1" />
@@ -202,7 +202,7 @@
       <mimic joint="${ns}/lhs_j1" multiplier="-1" offset="0" />
     </joint>
     <joint name="${ns}/lhs_j1" type="revolute">
-      <origin xyz="0.03725 0.015 0.017" rpy="0 0 2.36852" />
+      <origin xyz="0.03725 0.015 0.017" rpy="0 0 -3.14159" />
       <parent link="${ns}/base_link" />
       <child link="${ns}/lhs_inner_beam" />
       <axis xyz="0 0 1" />
@@ -232,7 +232,7 @@
       </inertial>
     </link>
     <joint name="${ns}/lhs_j2" type="continuous">
-      <origin xyz="0.01725 0.04 0" rpy="-3.14159 0 -0.773074" />
+      <origin xyz="0.01725 0.04 0" rpy="-3.14159 0 0" />
       <parent link="${ns}/base_link" />
       <child link="${ns}/lhs_outer_beam" />
       <axis xyz="0 0 1" />
@@ -315,7 +315,7 @@
       </inertial>
     </link>
     <joint name="${ns}/rhs_j3" type="continuous">
-      <origin xyz="0.035 0 0" rpy="3.14159 0 0.797722" />
+      <origin xyz="0.035 0 0" rpy="-3.14159 0 1.5708" />
       <parent link="${ns}/rhs_inner_beam" />
       <child link="${ns}/rhs_claw" />
       <axis xyz="0 0 1" />
@@ -324,7 +324,7 @@
       <mimic joint="${ns}/lhs_j1" multiplier="-1" offset="0" />
     </joint>
     <joint name="${ns}/rhs_j1" type="continuous">
-      <origin xyz="0.03725 -0.015 0" rpy="0 0 -0.797722" />
+      <origin xyz="0.03725 -0.015 0" rpy="0 0 -1.5708" />
       <parent link="${ns}/base_link" />
       <child link="${ns}/rhs_inner_beam" />
       <axis xyz="0 0 1" />
@@ -355,7 +355,7 @@
       </inertial>
     </link>
     <joint name="${ns}/rhs_j2" type="continuous">
-      <origin xyz="0.01725 -0.04 0" rpy="-3.14159 0 0.773074" />
+      <origin xyz="0.01725 -0.04 0" rpy="-3.14159 0 0" />
       <parent link="${ns}/base_link" />
       <child link="${ns}/rhs_outer_beam" />
       <axis xyz="0 0 1" />

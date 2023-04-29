@@ -117,7 +117,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: gripper/body
+    Fixed Frame: gripper/base_link
     Frame Rate: 30
   Name: root
   Tools:
@@ -178,4 +178,4 @@ Window Geometry:
     collapsed: true
   Width: 1048
   X: 658
-  Y: 45
+  Y: 27
